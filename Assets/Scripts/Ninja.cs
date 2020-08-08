@@ -13,8 +13,10 @@ public class Ninja : MonoBehaviour
     PlayerController playerController;
     EdgeCollider2D edgeCollider2D;
 
-    [SerializeField]bool isJumping;
-    [SerializeField]bool onGround;
+    bool isJumping;
+    float timerForJump;
+    bool onGround;
+    float multiplier;
     void Awake()
     {
         speed = 2;
@@ -27,10 +29,11 @@ public class Ninja : MonoBehaviour
         edgeCollider2D = gameObject.GetComponent<EdgeCollider2D>();
 
         isJumping = false;
+        onGround = true;
+        timerForJump = 0.3f;
 
-        playerController.Gameplay.Jump.started += ctx => { isJumping = true; };
-        playerController.Gameplay.Jump.performed += ctx => { isJumping = false; onGround = false; };
-        playerController.Gameplay.Jump.canceled += ctx => { isJumping = false; onGround = false; };
+        playerController.Gameplay.Jump.started += ctx => { if(onGround)isJumping = true; };
+        playerController.Gameplay.Jump.canceled += ctx => { isJumping = false; timerForJump = 0.3f; };
 
         playerController.Gameplay.Slide.performed += ctx => SlideCaller();
 
@@ -50,8 +53,9 @@ public class Ninja : MonoBehaviour
     /// </summary>
     void Jump()
     {
-        if (isJumping && onGround && stamina > 0.5)
+        if (isJumping && timerForJump > 0 && stamina > 0.125f && !animator.GetBool("IsSliding") && !animator.GetBool("IsAttacking"))
         {
+            timerForJump -= Time.deltaTime;
             stamina -= 0.125f;
             rb.velocity = new Vector2(rb.velocity.x, 7);
         }
@@ -62,12 +66,12 @@ public class Ninja : MonoBehaviour
     /// </summary>
     IEnumerator Slide()
     {
-        if (!animator.GetBool("Slide") && stamina > 10)
+        if (onGround && !animator.GetBool("IsSliding") && stamina > 10 && !animator.GetBool("IsAttacking"))
         {
             stamina -= 10;
-            animator.SetBool("Slide", true);
+            animator.SetBool("IsSliding", true);
             yield return new WaitForSeconds(0.75f);
-            animator.SetBool("Slide", false);
+            animator.SetBool("IsSliding", false);
         }
     }
 
@@ -84,12 +88,12 @@ public class Ninja : MonoBehaviour
     /// </summary>
     IEnumerator Attack()
     {
-        if (!animator.GetBool("Attack") && stamina > 20)
+        if (!animator.GetBool("IsAttacking") && stamina > 20 && !animator.GetBool("IsSliding"))
         {
-            stamina -= 20;
-            animator.SetBool("Attack", true);
+            stamina -= 18;
+            animator.SetBool("IsAttacking", true);
             yield return new WaitForSeconds(0.75f);
-            animator.SetBool("Attack", false);
+            animator.SetBool("IsAttacking", false);
         }
     }
 
@@ -106,9 +110,17 @@ public class Ninja : MonoBehaviour
     /// </summary>
     void StaminaRegenarater()
     {
-        if (stamina <= 99.585f && !animator.GetBool("Attack") && onGround && !animator.GetBool("Slide"))
+        if (stamina <= 99.8f && !animator.GetBool("IsAttacking") && onGround && !animator.GetBool("IsSliding"))
         {
-            stamina += 0.415f;
+            if (multiplier < 1)
+            {
+                multiplier += Time.deltaTime;
+            }
+            stamina += 0.2f * multiplier;
+        }
+        else
+        {
+            multiplier = 0;
         }
     }
 
@@ -116,9 +128,16 @@ public class Ninja : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Ground");
             onGround = true;
         }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
+        }        
     }
 
     #region OnEnable / OnDisable
