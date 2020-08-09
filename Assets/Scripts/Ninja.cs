@@ -5,13 +5,12 @@ using UnityEngine;
 public class Ninja : MonoBehaviour
 {
     int speed;
-    int score;
+    float score;
     [SerializeField] float stamina;
 
     Rigidbody2D rb;
     Animator animator;
     PlayerController playerController;
-    EdgeCollider2D edgeCollider2D;
 
     bool isJumping;
     float timerForJump;
@@ -26,13 +25,12 @@ public class Ninja : MonoBehaviour
         playerController = new PlayerController();
         animator = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        edgeCollider2D = gameObject.GetComponent<EdgeCollider2D>();
 
         isJumping = false;
         onGround = true;
         timerForJump = 0.3f;
 
-        playerController.Gameplay.Jump.started += ctx => { if(onGround)isJumping = true; };
+        playerController.Gameplay.Jump.started += ctx => { if (onGround) isJumping = true; };
         playerController.Gameplay.Jump.canceled += ctx => { isJumping = false; timerForJump = 0.3f; };
 
         playerController.Gameplay.Slide.performed += ctx => SlideCaller();
@@ -42,6 +40,9 @@ public class Ninja : MonoBehaviour
 
     void Update()
     {
+        IncreaseScore();
+        InformUI();
+
         rb.velocity = new Vector3(speed, rb.velocity.y);
 
         Jump();
@@ -124,6 +125,24 @@ public class Ninja : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Send information to UIManager
+    /// </summary>
+    void InformUI()
+    {
+        UIManager.Instance.stamina = this.stamina;
+        UIManager.Instance.score = this.score;
+    }
+    
+    /// <summary>
+    /// Increase score overtime
+    /// </summary>
+    void IncreaseScore()
+    {
+        score += Time.deltaTime * 168;
+    }
+
+    #region OnCollisionStay2D / OnCollisionExit2D
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -139,6 +158,17 @@ public class Ninja : MonoBehaviour
             onGround = false;
         }        
     }
+    #endregion
+
+    #region OnTriggerEnter2D
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            score += 5000;
+        }
+    }
+    #endregion
 
     #region OnEnable / OnDisable
     private void OnEnable()
