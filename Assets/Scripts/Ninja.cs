@@ -6,7 +6,7 @@ public class Ninja : MonoBehaviour
 {
     int speed;
     float score;
-    [SerializeField] float stamina;
+    float stamina;
 
     Rigidbody2D rb;
     Animator animator;
@@ -16,8 +16,11 @@ public class Ninja : MonoBehaviour
     float timerForJump;
     bool onGround;
     float multiplier;
+
     void Awake()
     {
+        GameManager.Instance.startGame += () => this.enabled = true;
+
         speed = 2;
         score = 0;
         stamina = 100;
@@ -54,7 +57,7 @@ public class Ninja : MonoBehaviour
     /// </summary>
     void Jump()
     {
-        if (isJumping && timerForJump > 0 && stamina > 0.125f && !animator.GetBool("IsSliding") && !animator.GetBool("IsAttacking"))
+        if (isJumping && timerForJump > 0 && stamina > 6 && !animator.GetBool("IsSliding") && !animator.GetBool("IsAttacking"))
         {
             timerForJump -= Time.deltaTime;
             stamina -= 0.125f;

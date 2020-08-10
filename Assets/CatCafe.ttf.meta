@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26a794da4ca4ba5478d1c312be970726
+guid: cfea66233abd48549bbd936c167687b6
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Manga Temple
+  - CatCafe
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

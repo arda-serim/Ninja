@@ -12,7 +12,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("Null");
+    
             }
             return _instance;
         }
@@ -21,5 +21,8 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     private void Awake()
     {
         _instance = this as T;
+        Init();
     }
+
+    public virtual void Init() { }
 }
