@@ -21,7 +21,17 @@ public class UIManager : MonoSingleton<UIManager>
 
     void Start()
     {
-        Instantiate(uI[PlayerPrefs.GetInt("UI", 0)]);
+        foreach (var go in uI)
+        {
+            if (go != uI[PlayerPrefs.GetInt("UI", 0)])
+            {
+                Destroy(go);
+            }
+            else
+            {
+                go.SetActive(true);
+            }
+        }
         healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
