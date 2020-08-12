@@ -47,6 +47,16 @@ public class Ninja : MonoBehaviour
         InformUI();
 
         rb.velocity = new Vector3(speed, rb.velocity.y);
+        animator.SetFloat("VelocityY", rb.velocity.y);
+
+        if (onGround && !animator.GetBool("IsSliding") && !animator.GetBool("IsSliding"))
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+        }
 
         Jump();
         StaminaRegenarater();
@@ -96,7 +106,7 @@ public class Ninja : MonoBehaviour
         {
             stamina -= 18;
             animator.SetBool("IsAttacking", true);
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.58f);
             animator.SetBool("IsAttacking", false);
         }
     }
