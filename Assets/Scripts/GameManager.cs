@@ -39,16 +39,17 @@ public class GameManager : MonoSingleton<GameManager>
         settings.color = new Color(settings.color.r, settings.color.g, settings.color.b, 0);
         gameName.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, -0.9f);
         bestScoreText.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, -0.9f);
-        StartCoroutine(GameNameAnimation());
+        StartCoroutine(GameStartAnimation());
     }
 
-    IEnumerator GameNameAnimation()
+    IEnumerator GameStartAnimation()
     {
         while (gameName.fontMaterial.GetFloat(ShaderUtilities.ID_FaceDilate) < 0.1f)
         {
             gameName.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, gameName.fontMaterial.GetFloat(ShaderUtilities.ID_FaceDilate) + 0.005f);
             bestScoreText.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, gameName.fontMaterial.GetFloat(ShaderUtilities.ID_FaceDilate) + 0.005f);
-            settings.color = new Color(settings.color.r, settings.color.g, settings.color.b, settings.color.a + 0.005f);
+            if (settings != null)
+                settings.color = new Color(settings.color.r, settings.color.g, settings.color.b, settings.color.a + 0.005f);
             yield return new WaitForSeconds(0.001f);
         }
     }

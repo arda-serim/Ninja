@@ -12,8 +12,7 @@ public class Ninja : MonoBehaviour
     Animator animator;
     PlayerController playerController;
 
-    bool isJumping;
-    float timerForJump;
+    int jumpsLeft;
     bool onGround;
     float multiplier;
 
@@ -21,7 +20,7 @@ public class Ninja : MonoBehaviour
     {
         GameManager.Instance.startGame += () => this.enabled = true;
 
-        speed = 2;
+        speed = 10;
         score = 0;
         stamina = 100;
 
@@ -29,12 +28,10 @@ public class Ninja : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        isJumping = false;
+        jumpsLeft = 2;
         onGround = true;
-        timerForJump = 0.3f;
 
-        playerController.Gameplay.Jump.started += ctx => { if (onGround) isJumping = true; };
-        playerController.Gameplay.Jump.canceled += ctx => { isJumping = false; timerForJump = 0.3f; };
+        playerController.Gameplay.Jump.performed += ctx => { if (jumpsLeft > 0 && stamina > 6 && !animator.GetBool("IsSliding") && !animator.GetBool("IsAttacking")) JumpCalller(); };
 
         playerController.Gameplay.Slide.performed += ctx => SlideCaller();
 
@@ -57,22 +54,35 @@ public class Ninja : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-
-        Jump();
         StaminaRegenarater();
     }
 
     /// <summary>
-    /// Jump depending on how long press Jump Key (If do not stop pressing, stop automaticly)
+    /// Jump
     /// </summary>
-    void Jump()
+    IEnumerator Jump()
     {
-        if (isJumping && timerForJump > 0 && stamina > 6 && !animator.GetBool("IsSliding") && !animator.GetBool("IsAttacking"))
+        if (jumpsLeft == 1)
         {
-            timerForJump -= Time.deltaTime;
-            stamina -= 0.125f;
-            rb.velocity = new Vector2(rb.velocity.x, 7);
+            animator.SetBool("DoubleJump", true);
         }
+        stamina -= 7.7f;
+        jumpsLeft -= 1;
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.AddForce(new Vector2(0, 300));
+        if (jumpsLeft == 0)
+        {
+            yield return new WaitForSeconds(0.45f);
+            animator.SetBool("DoubleJump", false);
+        }
+    }
+
+    /// <summary>
+    /// Just call Jump()
+    /// </summary>
+    void JumpCalller()
+    {
+        StartCoroutine(Jump());
     }
 
     /// <summary>
@@ -84,7 +94,7 @@ public class Ninja : MonoBehaviour
         {
             stamina -= 10;
             animator.SetBool("IsSliding", true);
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.55f);
             animator.SetBool("IsSliding", false);
         }
     }
@@ -102,11 +112,11 @@ public class Ninja : MonoBehaviour
     /// </summary>
     IEnumerator Attack()
     {
-        if (!animator.GetBool("IsAttacking") && stamina > 20 && !animator.GetBool("IsSliding"))
+        if (!animator.GetBool("IsAttacking") && stamina > 20 && !animator.GetBool("IsSliding") && !animator.GetBool("DoubleJump"))
         {
             stamina -= 18;
             animator.SetBool("IsAttacking", true);
-            yield return new WaitForSeconds(0.58f);
+            yield return new WaitForSeconds(0.7f);
             animator.SetBool("IsAttacking", false);
         }
     }
@@ -156,11 +166,17 @@ public class Ninja : MonoBehaviour
     }
 
     #region OnCollisionStay2D / OnCollisionExit2D
-    void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             onGround = true;
+            jumpsLeft = 2;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            rb.freezeRotation = false;
         }
     }
 
@@ -179,6 +195,11 @@ public class Ninja : MonoBehaviour
         if (collider.gameObject.CompareTag("Enemy"))
         {
             score += 5000;
+        }
+
+        if (collider.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(collider.gameObject);
         }
     }
     #endregion
