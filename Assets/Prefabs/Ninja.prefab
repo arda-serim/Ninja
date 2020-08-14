@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399214671096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399242540335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: taildown1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399289966927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_ArmEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3892942399309883505}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 35895.89}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36615.89}
 --- !u!1 &3892942399309883506
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399309883505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399355940369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_UpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399370024610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942399370024611}
   m_LocalRotation: {x: -0, y: -0, z: -0.70998186, w: 0.70422006}
-  m_LocalPosition: {x: 0.85818523, y: -1.3120894, z: 30.37077}
+  m_LocalPosition: {x: 0.85818523, y: -1.3120894, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3892942400856825046}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 3892942399409007634}
   - component: {fileID: 3892942399409007632}
   - component: {fileID: 3892942399409007633}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,8 +296,8 @@ MonoBehaviour:
   - {fileID: 3892942400484692621}
   - {fileID: 3892942399788568078}
   m_Bounds:
-    m_Center: {x: -0.002301693, y: -0.0034231842, z: 0}
-    m_Extent: {x: 0.7058209, y: 0.42899862, z: 0}
+    m_Center: {x: -0.002301693, y: -0.003423214, z: 0}
+    m_Extent: {x: 0.7058209, y: 0.4289986, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3892942399437605411
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399437605410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tailup2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399522317495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpeerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399550908838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: taildown2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 3892942399592179993}
   - component: {fileID: 3892942399592179999}
   - component: {fileID: 3892942399592179992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ MonoBehaviour:
   - {fileID: 3892942400662570008}
   - {fileID: 3892942399881739199}
   m_Bounds:
-    m_Center: {x: -0.3378507, y: 0.5797472, z: 0}
+    m_Center: {x: -0.33785075, y: 0.57974714, z: 0}
     m_Extent: {x: 0.4367727, y: 0.35665798, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -509,7 +509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399598965932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tailup0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399736479779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_ArmEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3892942399881739199}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 52967.63}
+  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 53687.63}
 --- !u!1 &3892942399769855431
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399769855430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399780939743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: taildown4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399788568078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tailup4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399808077370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tailup1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 3892942399823271107}
   - component: {fileID: 3892942399823271105}
   - component: {fileID: 3892942399823271106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,8 +784,8 @@ MonoBehaviour:
   - {fileID: 3892942400338017826}
   - {fileID: 3892942399769855430}
   m_Bounds:
-    m_Center: {x: -0.12026173, y: 0.20866218, z: 0}
-    m_Extent: {x: 0.31379455, y: 0.3383425, z: 0}
+    m_Center: {x: -0.12026173, y: 0.20866212, z: 0}
+    m_Extent: {x: 0.31379455, y: 0.33834243, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3892942399881739192
@@ -797,7 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399881739199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R,_LowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399933346455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3892942399769855430}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50132.85}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50852.85}
 --- !u!1 &3892942399958417844
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942399958417803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_ArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942399958417844}
   m_LocalRotation: {x: -0, y: -0, z: -0.5471126, w: 0.837059}
-  m_LocalPosition: {x: 0.5612839, y: -0.14986098, z: 30.37077}
+  m_LocalPosition: {x: 0.5612839, y: -0.14986098, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3892942400502102007}
@@ -891,9 +891,9 @@ GameObject:
   - component: {fileID: 3892942400033756548}
   - component: {fileID: 3892942400033756571}
   - component: {fileID: 203749017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: katana
-  m_TagString: Untagged
+  m_TagString: NinjaWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -906,7 +906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942400033756549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.588, y: 0.718, z: -30.37077}
+  m_LocalPosition: {x: 0.588, y: 0.718, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3892942399881739199}
@@ -970,7 +970,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942400033756549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -995,7 +995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400111809249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: taildown0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400195237780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3892942401125852114}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50711.055}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 51071.055}
 --- !u!1 &3892942400338017827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400338017826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_UpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892942400355995972}
   - component: {fileID: 3892942400355995973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400401810452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: taildown3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400484692621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tailup3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1214,7 +1214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892942400502102007}
   - component: {fileID: 3892942400502102000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_ArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 3892942400528854983}
   - component: {fileID: 3892942400528854981}
   - component: {fileID: 3892942400528854982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,14 +1382,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400596294590}
-  - component: {fileID: 3892942400596294589}
   - component: {fileID: 3892942400596294578}
   - component: {fileID: 3892942400596294579}
   - component: {fileID: 3892942400596294576}
   - component: {fileID: 3892942400596294588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ninja
-  m_TagString: Untagged
+  m_TagString: Ninja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1413,22 +1412,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &3892942400596294589
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892942400596294591}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.3440894, y: -0.5090256}
-  m_Size: {x: 0.6059773, y: 2.7572494}
-  m_Direction: 0
 --- !u!50 &3892942400596294578
 Rigidbody2D:
   serializedVersion: 4
@@ -1519,7 +1502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400662570008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,7 +1534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892942400677181742}
   - component: {fileID: 3892942400677181743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_ArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400704994926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_ArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942400704994927}
   m_LocalRotation: {x: -0, y: -0, z: -0.5503586, w: 0.83492845}
-  m_LocalPosition: {x: 2.247679, y: 0.1691679, z: 30.37077}
+  m_LocalPosition: {x: 2.247679, y: 0.1691679, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3892942400677181742}
@@ -1644,7 +1627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400727069885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,7 +1642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942400727069886}
   m_LocalRotation: {x: -0, y: -0, z: -0.7139161, w: 0.70023125}
-  m_LocalPosition: {x: 2.1110194, y: -1.142064, z: 30.37077}
+  m_LocalPosition: {x: 2.1110194, y: -1.142064, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3892942400355995972}
@@ -1675,7 +1658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892942400856825046}
   - component: {fileID: 3892942400856825047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_LegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942400971167976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1754,8 @@ GameObject:
   - component: {fileID: 3892942401076157637}
   - component: {fileID: 3892942401076157659}
   - component: {fileID: 3892942401076157636}
-  m_Layer: 0
+  - component: {fileID: 81476419}
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1786,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892942401076157638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2712622, y: -0.45150644, z: 30.370771}
+  m_LocalPosition: {x: 1.2712622, y: -0.45150644, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3892942399214671096}
@@ -1865,6 +1849,22 @@ MonoBehaviour:
     m_Extent: {x: 0.20621574, y: 0.63121444, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
+--- !u!70 &81476419
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892942401076157638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.05}
+  m_Size: {x: 0.6059773, y: 2.7572494}
+  m_Direction: 0
 --- !u!1 &3892942401125852115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942401125852114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_LowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 3892942401228268577}
   - component: {fileID: 3892942401228268583}
   - component: {fileID: 3892942401228268576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +1998,7 @@ MonoBehaviour:
   - {fileID: 3892942399309883505}
   m_Bounds:
     m_Center: {x: 0.49044448, y: 0.3839666, z: 0}
-    m_Extent: {x: 0.52759624, y: 0.28636762, z: 0}
+    m_Extent: {x: 0.52759624, y: 0.2863676, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3892942401277266263
@@ -2010,7 +2010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892942401277266262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

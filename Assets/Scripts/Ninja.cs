@@ -20,7 +20,7 @@ public class Ninja : MonoBehaviour
     {
         GameManager.Instance.startGame += () => this.enabled = true;
 
-        speed = 10;
+        speed = 7;
         score = 0;
         stamina = 100;
 
@@ -43,7 +43,7 @@ public class Ninja : MonoBehaviour
         IncreaseScore();
         InformUI();
 
-        rb.velocity = new Vector3(speed, rb.velocity.y);
+        rb.velocity = new Vector3(speed * transform.right.x, rb.velocity.y);
         animator.SetFloat("VelocityY", rb.velocity.y);
 
         if (onGround && !animator.GetBool("IsSliding") && !animator.GetBool("IsSliding"))
@@ -174,9 +174,11 @@ public class Ninja : MonoBehaviour
             jumpsLeft = 2;
         }
 
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy"))
         {
             rb.freezeRotation = false;
+            animator.enabled = false;
+            this.enabled = false;
         }
     }
 
@@ -195,6 +197,14 @@ public class Ninja : MonoBehaviour
         if (collider.gameObject.CompareTag("Enemy"))
         {
             score += 5000;
+        }
+
+        if (collider.gameObject.CompareTag("EnemyWeapon"))
+        {
+            Physics2D.IgnoreCollision(gameObject.transform.GetChild(0).gameObject.GetComponent<Collider2D>(), collider.transform.root.GetComponent<Collider2D>());
+            rb.freezeRotation = false;
+            animator.enabled = false;
+            this.enabled = false;
         }
 
         if (collider.gameObject.CompareTag("Obstacle"))

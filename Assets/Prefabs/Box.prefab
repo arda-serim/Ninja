@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1556418129641918432}
   - component: {fileID: 1556418129641918439}
   - component: {fileID: 1556418129641918438}
+  - component: {fileID: -4127496810319865317}
   m_Layer: 0
   m_Name: Box
   m_TagString: Obstacle
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9e7cdc80a10e3d34b871ff6b4aa405b1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.061599493, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,3 +132,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4127496810319865317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556418129641918437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a26b9cd5553eb94895b949fe3151fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
