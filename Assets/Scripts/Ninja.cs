@@ -201,7 +201,7 @@ public class Ninja : MonoBehaviour
 
         if (collider.gameObject.CompareTag("EnemyWeapon"))
         {
-            Physics2D.IgnoreCollision(gameObject.transform.GetChild(0).gameObject.GetComponent<Collider2D>(), collider.transform.root.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(gameObject.transform.GetChild(0).GetComponent<Collider2D>(), collider.gameObject.transform.GetChild(0).GetComponent<Collider2D>());
             rb.freezeRotation = false;
             animator.enabled = false;
             this.enabled = false;

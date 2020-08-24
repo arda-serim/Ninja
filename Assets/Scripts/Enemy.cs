@@ -27,6 +27,10 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(Attack());
         }
+        if (Physics2D.Raycast(transform.position - new Vector3(0, 0.5f ,0), transform.right, 2, 1 << LayerMask.NameToLayer("Obstacle")))
+        {
+            Jump();
+        }
     }
 
     void Jump()
